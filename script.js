@@ -32,7 +32,7 @@ async function awaitCallModified() {
   }
 }
 // invoke the awaitCall function
-awaitCallModified();
+// awaitCallModified();
 
 // Task 3
 // Objective: Awaiting Concurrent Requests: Create an async function concurrentRequests that makes two API calls concurrently using Promise.all(). Log the combined results after both requests have resolved.
@@ -53,7 +53,6 @@ async function getPosts() {
     console.log("Sorry an error has ocurred here");
   }
 }
-getPosts();
 
 // getTodos
 async function getTodos() {
@@ -70,10 +69,9 @@ async function getTodos() {
     console.log("Sorry an error has ocurred here");
   }
 }
-getTodos();
 
 // using promise.all to chain both async function together
 async function ConcurrentRequest() {
-  return await Promise.all((getPosts, getTodos));
+  return await Promise.all([getPosts(), getTodos()]);
 }
 ConcurrentRequest();
